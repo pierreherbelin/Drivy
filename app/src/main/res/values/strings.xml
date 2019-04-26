@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Drivy</string>
+    <string name="price_format">%d€/j</string>
+    <plurals name="vote_count">
+        <item quantity="one">%d vote</item>
+        <item quantity="other">%d votes</item>
+    </plurals>
+    <string name="car_name_format">%s %s</string>
+    <string name="no_car_error_message">¯\_(ツ)_/¯ \n Aucune voiture disponible pour le moment.\nSwiper vers le bas pour
+        rafraichir!
+    </string>
 </resources>
