@@ -2,11 +2,16 @@ package com.pierreherbelin.drivy.carslist.ui
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.pierreherbelin.drivy.R
+import com.pierreherbelin.drivy.app.extension.onItemClick
+import com.pierreherbelin.drivy.app.listener.RecyclerItemClickListener
+import com.pierreherbelin.drivy.cardetail.ui.CarDetailActivity
+import com.pierreherbelin.drivy.cardetail.ui.CarDetailActivity.Companion.CAR_DETAIL_KEY
 import com.pierreherbelin.drivy.carslist.presenter.CarsListPresenter
 import com.pierreherbelin.drivy.carslist.ui.adapter.CarsAdapter
 import com.pierreherbelin.drivy.domain.data.Car
@@ -38,6 +43,14 @@ class CarsListActivity : AppCompatActivity(), ICarsListView {
         swipe_refresh_layout.setOnRefreshListener {
             loadData()
         }
+
+        cars_list_recycler.onItemClick(object : RecyclerItemClickListener.OnClickListener {
+            override fun onItemClick(position: Int, view: View) {
+                val intent = Intent(applicationContext, CarDetailActivity::class.java)
+                intent.putExtra(CAR_DETAIL_KEY, mCarsList[position])
+                startActivity(intent)
+            }
+        })
     }
 
     override fun onCarsAvailable(carsList: List<Car>) {

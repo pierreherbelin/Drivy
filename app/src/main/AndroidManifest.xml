@@ -11,6 +11,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
         <activity
                 android:name=".carslist.ui.CarsListActivity"
                 android:screenOrientation="portrait">
@@ -22,6 +23,10 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".cardetail.ui.CarDetailActivity"
+                  android:screenOrientation="portrait"
+                  android:parentActivityName=".carslist.ui.CarsListActivity"/>
     </application>
 
 </manifest>

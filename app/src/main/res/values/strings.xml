@@ -9,4 +9,5 @@
     <string name="no_car_error_message">¯\_(ツ)_/¯ \n Aucune voiture disponible pour le moment.\nSwiper vers le bas pour
         rafraichir!
     </string>
+    <string name="owner_section">Propriétaire:</string>
 </resources>

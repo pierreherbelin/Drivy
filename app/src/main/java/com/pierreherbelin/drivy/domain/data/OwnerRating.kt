@@ -4,16 +4,16 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class CarRating(
+data class OwnerRating(
     @SerializedName("average")
     val average: Float,
     @SerializedName("count")
     val count: Int
 ) : Parcelable {
 
-    companion object CREATOR : Parcelable.Creator<CarRating> {
-        override fun createFromParcel(parcel: Parcel): CarRating = CarRating(parcel)
-        override fun newArray(size: Int): Array<CarRating?> = arrayOfNulls(size)
+    companion object CREATOR : Parcelable.Creator<OwnerRating> {
+        override fun createFromParcel(parcel: Parcel): OwnerRating = OwnerRating(parcel)
+        override fun newArray(size: Int): Array<OwnerRating?> = arrayOfNulls(size)
     }
 
     constructor(source: Parcel) : this(
